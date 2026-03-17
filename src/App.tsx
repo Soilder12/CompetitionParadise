@@ -10,7 +10,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Zap, Target, Map, Wifi, Wrench, Info, Trophy, X } from 'lucide-react';
+import { Zap, Target, Map, Wifi, Wrench, Info, Trophy, X, BookOpen } from 'lucide-react';
 import Game1 from './components/Game1';
 import Game2 from './components/Game2';
 import Game3 from './components/Game3';
@@ -78,13 +78,24 @@ export default function App() {
             exit={{ opacity: 0, y: -20 }}
             className="flex flex-col items-center justify-center min-h-screen p-8 relative z-10"
           >
-            <button 
-              onClick={() => setShowInfo(true)}
-              className="absolute top-8 right-8 p-4 bg-blue-600 text-white rounded-full hover:bg-blue-500 active:scale-95 transition-transform flex items-center gap-2"
-            >
-              <Info size={32} />
-              <span className="text-2xl font-bold">关于物联网</span>
-            </button>
+            <div className="absolute top-8 right-8 flex items-center gap-4">
+              <a 
+                href="https://soilder12.github.io/flashcard-system/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 bg-purple-600 text-white rounded-full hover:bg-purple-500 active:scale-95 transition-transform flex items-center gap-2 shadow-lg"
+              >
+                <BookOpen size={32} />
+                <span className="text-2xl font-bold">闪卡系统</span>
+              </a>
+              <button 
+                onClick={() => setShowInfo(true)}
+                className="p-4 bg-blue-600 text-white rounded-full hover:bg-blue-500 active:scale-95 transition-transform flex items-center gap-2 shadow-lg"
+              >
+                <Info size={32} />
+                <span className="text-2xl font-bold">关于物联网</span>
+              </button>
+            </div>
 
             <div className="absolute top-8 left-8 flex items-center gap-4 bg-slate-800 p-4 rounded-3xl border-2 border-slate-700">
               <Trophy size={40} className="text-yellow-400" />
